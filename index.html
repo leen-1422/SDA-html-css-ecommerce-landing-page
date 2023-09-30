@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shop </title>
-    <link rel=" stylesheet" type="text/css" href="./style.css">
+    <link rel=" stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 <body>
     <!--header section-->
@@ -13,14 +16,21 @@
 
         <nav tabindex="0">
             <ul id="navbar">
-                <li><a href="index.html" aria-label="navigate to the home page" >Home</a></li>
+                <li><a class="active" href="index.html" aria-label="navigate to the home page" >Home</a></li>
                 <li><a href="#" aria-label="navigate to the shop page" >Shop</a></li>
                 <li><a href="#" aria-label="navigate to the about page" >About</a></li>
-                <li><a href="#" aria-label="navigate to the contact page" >Contact</a></li>
-                <li><a href="#" aria-label="navigate to the login page" >Login</a></li>
-                
+                <li><a href="#" aria-label="navigate to the login page" >login</a></li>
+                <li><a href="#" aria-label="navigate to shopping cart" ><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <a id="close" href="#" aria-label="close navigation bar" ><i class="fa-solid fa-x"></i></a>
 
             </ul>
+        </nav>
+        <nav id="mobile">
+            <a href="#" aria-label="navigate to shopping cart" ><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fa-solid fa-bars"></i>
+            
+
+
         </nav>
     </header>
 
@@ -29,14 +39,14 @@
     <section id="hero">
         <h1>WE ARE ON SALE!!</h1>
         <p>save more with coupons& up to 70% off!! </p>
-        <button>Shop Now</button>
+        <button class="button">Shop Now</button>
     </section>
 
     <section id="products" class="section-p1">
 
         <div class="fe-box" tabindex="0">
-            <img src="src/image/mediamodifier-7cERndkOyDw-unsplash.jpg" alt="white sweater" style="width: 150px; height: 300px;">
-            <h2>white sweater</h2>
+            <img src="src/image/mediamodifier-7cERndkOyDw-unsplash.jpg" alt="white sweater" >
+            <h2>sweater</h2>
             <p>100% cotton sweater</p>
             <div class="stars" tabindex="0">
                 <i class="fa-solid fa-star"></i>
@@ -49,8 +59,8 @@
         </div>
 
         <div class="fe-box" tabindex="0">
-            <img src="src/image/milada-vigerova-p8Drpg_duLw-unsplash.jpg" alt="cotton poncho" style="width: 150px; height: 300px;">
-            <h2>cotton poncho </h2>
+            <img src="src/image/milada-vigerova-p8Drpg_duLw-unsplash.jpg" alt="cotton poncho" >
+            <h2>concho </h2>
             <p>handmade cotton poncho</p>
             <i class="fa-solid fa-star"></i>
             <i class="fa-regular fa-star"></i>
@@ -61,7 +71,7 @@
         </div>
 
         <div class="fe-box" tabindex="0">
-            <img src="src/image/tobias-tullius-Fg15LdqpWrs-unsplash.jpg" alt="orange jacket" style="width: 150px; height: 300px;">
+            <img src="src/image/tobias-tullius-Fg15LdqpWrs-unsplash.jpg" alt="orange jacket" >
             <h2>addidas</h2>
             <p>orange jacket</p>
             <i class="fa-solid fa-star"></i>
@@ -72,7 +82,7 @@
 
         </div>
         <div class="fe-box" tabindex="0">
-            <img src="src/image/keagan-henman-xPJYL0l5Ii8-unsplash.jpg" alt="t-shirt" style="width: 150px; height: 300px;">
+            <img src="src/image/keagan-henman-xPJYL0l5Ii8-unsplash.jpg" alt="t-shirt" >
             <h2>t-shirt</h2>
             <p>100% cotton t-shirt</p>
                 <i class="fa-solid fa-star"></i>
@@ -85,19 +95,20 @@
 
 
     </section>
+    <!--newsletter section -->
 
     <section id="newsletter" class="section-p1 section-m1" >
 
         <div  class="newstext" tabindex="0">
-            <h2>sign up for our news letter</h2>
-            <p>get email updates about our shop to get the best offer</p>
+            <h2>sign up for our Newsletter</h2>
+            <p>get email updates about our shop to get the best offers</p>
 
         </div>
 
         <form class="form" tabindex="0">
-          <label for="name">enter your email:</label>
+          <label for="name"></label>
             <input id="name" type="text" placeholder="email@address.com" name="name">
-            <button>sign up</button>
+            <button class="form-button">sign up</button>
         </form>
     </section>
 
@@ -132,12 +143,30 @@
             
 
         </div>
+        
 
     </footer>
 
 
 
-    
+    <script >
+        const bar= document.getElementById('bar');
+        const nav= document.getElementById('navbar');
+        const close= document.getElementById('close');
+
+        if (bar){
+            bar.addEventListener('click', () =>{
+                nav.classList.add('active');
+            })
+        }
+        if (close){
+            close.addEventListener('click', () =>{
+                nav.classList.remove('active');
+            })
+        }
+        
+
+    </script>
 
 </body>
 

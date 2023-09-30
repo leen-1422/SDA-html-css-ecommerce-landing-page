@@ -1,0 +1,178 @@
+$my-text-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$my-primary-color: blue;
+$my-main-color:red;
+$my-text-color: #222;
+$my-box-shadow: 0 5px 15px rgb(0, 0, 0, 0.06);
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: $my-text-color;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: $my-text-color;
+
+}
+
+h4{
+    font-size: 20px;
+    color: $my-text-color;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 16px;
+    margin: 15px 0 20px 0;
+    color: $my-text-color;
+}
+
+.section-p1{
+    padding: 40px 80px;
+}
+
+.section-m1{
+    margin: 40px 0;
+}
+
+body{
+    width: 100%;
+}
+
+/* Header Start */ 
+#header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: $my-background-color;
+    box-shadow: $my-box-shadow;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+}
+
+#navbar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+
+}
+
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+
+#navbar li a:hover{
+    color: aquamarine;
+}
+
+/* hero section */ 
+
+#hero{
+    background-color: $my-background-color;
+    height: 90vh;
+    width: 100%;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+#hero button{
+    background-color: blue;
+    color: #222;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#products{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#products .fe-box{
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: $my-box-shadow;
+
+}
+
+#newsletter{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: bisque;
+    background-position: 20% 30%;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+footer li a {
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    
+}
+footer li {
+    list-style: none;
+}
+
