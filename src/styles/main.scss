@@ -1,0 +1,457 @@
+@use '../styles/' as u;
+
+@import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: $my-text-color;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: $my-text-color;
+
+}
+p{
+    font-size: 16px;
+    margin: 15px 0 20px 0;
+    color: $my-text-color;
+}
+
+.section-p1{
+    padding: 40px 80px;
+}
+
+.section-m1{
+    margin: 40px 0;
+}
+
+body{
+    width: 100%;
+    background-color: $my-primary-color;
+}
+
+/* Header Start */ 
+
+
+#header {
+    @include u.centring;
+	padding: 20px 80px;
+	background: $my-primary-color;
+	box-shadow: $my-box-shadow;
+	position: sticky;
+	top: 0;
+	left: 0;
+	box-shadow: $my-box-shadow;
+	z-index: 10;
+}
+#navbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	li {
+		list-style: none;
+		padding: 0 20px;
+		position: relative;
+		a {
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: $my-font-wight;
+			color: $my-text-color;
+			transition: 0.3 ease;
+			&:hover {
+				color: $my-buttom-color;
+				&::after {
+					content: "";
+					width: 30%;
+					height: 2px;
+					background-color: $my-buttom-color;
+					position: absolute;
+					bottom: -4px;
+					left: 20px;
+				}
+			}
+		}
+		a.active {
+			color: $my-buttom-color;
+			&::after {
+				content: "";
+				width: 30%;
+				height: 2px;
+				background-color: $my-buttom-color;
+				position: absolute;
+				bottom: -4px;
+				left: 20px;
+			}
+		}
+	}
+}
+#navbar.active {
+	right: 0;
+}
+#mobile {
+	display: none;
+	align-items: center;
+}
+#close {
+	display: none;
+}
+
+
+/* hero section */ 
+$color_1: $my-text-color;
+$font-family_1: 'Nunito', sans-serif;
+
+@keyframes ring {
+	0% {
+		width: 30px;
+		height: 30px;
+		opacity: 1;
+	}
+	100% {
+		width: 300px;
+		height: 300px;
+		opacity: 0;
+	}
+}
+#hero {
+	background: $my-main-color;
+	height: 90vh;
+	width: 100%;
+	padding: 0 80px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+
+    .button {
+        min-width: 150px;
+        min-height: 60px;
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        font-weight: $my-font-wight;
+        color: $color_1;
+        background: $my-buttom-color;
+        border: none;
+        border-radius: 1000px;
+        box-shadow: 12px 12px 24px $my-buttom-color;
+        transition: all 0.3s ease-in-out 0s;
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        padding: 14px 80px 14px 65px;
+        white-space: nowrap;
+        &::before {
+            content: '';
+            border-radius: 1000px;
+            min-width: calc(300px + 12px);
+            min-height: calc(60px + 12px);
+            border: 6px solid $my-buttom-color;
+            box-shadow: 0 0 60px $my-buttom-color;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all .3s ease-in-out 0s;
+        }
+        &:hover {
+            color: $color_1;
+            transform: translateY(-6px);
+            &::before {
+                opacity: 1;
+            }
+            &::after {
+                animation: none;
+                display: none;
+            }
+        }
+        &:focus {
+            color: $color_1;
+            transform: translateY(-6px);
+            &::before {
+                opacity: 1;
+            }
+            &::after {
+                animation: none;
+                display: none;
+            }
+        }
+        &::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            border: 6px solid $my-buttom-color;
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: ring 1.5s infinite;
+        }
+    }
+    @media all and (max-width:30em) {
+        a.button {
+            display: block;
+            margin: 0.4em auto;
+        }
+    }
+    
+}
+
+
+
+
+/* products section*/
+
+#products{
+    @include u.centring;
+    width: 100%;
+    background: $my-primary-color;
+
+    .fe-box{
+        width: 200px;
+        text-align: center;
+        padding: 25px 15px;
+        box-shadow: $my-box-shadow;
+        border: 1px solid $my-main-color;
+        border-radius: 4px;
+        margin: 15px 0;
+        overflow: hidden;
+
+        img{
+            width: 120px; 
+            height: 300px;
+        }
+
+        h2{
+            font-size: 22px;
+        }
+    
+    }
+
+}
+
+
+
+/*newsletter*/
+#newsletter{
+    @include u.centring;
+    background-color: $my-main-color;
+
+    h2{
+        font-size: 30px;
+        font-weight: $my-font-wight;
+        color: $my-text-color;
+    
+    }
+
+    p{
+        font-size: 14px;
+        font-weight: $my-font-wight;
+        color: $my-text-color;
+        
+    }
+
+    .form{
+        display: flex;
+        width: 40%;
+
+        input{
+            height: 3.125rem;
+            padding: 0 1.25em;
+            font-size: 14px;
+            width: 100%;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            outline: none;
+        }
+        .form-button{
+            font-size: 20px;
+            font-weight: $my-font-wight;
+            padding: 9px 40px;
+            color: $my-text-color;
+            background-color: $my-buttom-color;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: 0.2s;
+            white-space: nowrap;
+            box-shadow: $my-main-color;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0; 
+        }
+    }
+}
+
+
+
+
+
+/*footer section*/
+footer{
+    @include u.centring;
+    margin-bottom: 20px;
+    background: $my-primary-color;
+
+    .col{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+
+        .logo{
+            margin-bottom: 30px;
+        }
+    
+    }
+
+    h3{
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+
+    p{
+        font-size: 13px;
+        margin: 0 0 8px 0;
+        
+    }
+
+    li {
+        list-style: none;
+
+        a {
+            font-size: 13px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            color: $my-text-color;
+        }
+    }
+}
+
+
+@include u.breakpoint(medium-screen) {
+    .section-p1{
+        padding: 40px 40px;
+    }
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: $my-primary-color;
+        box-shadow: $my-buttom-color;
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+
+        li {
+            margin-bottom: 25px;
+        }
+
+        #close{
+            position: absolute;
+            display: initial;
+            top: 30px;
+            left: 30px;
+            color: $my-text-color;
+            font-size: 24px;
+        }
+    }
+    
+    #mobile{
+        display: flex;
+        align-items: center;
+
+        i {
+            color: $my-text-color;
+            font-size: 24px;
+            padding-left: 20px;
+        }
+    }
+    
+    #hero {
+       
+        height: 70vh;
+        background-position: top 30% right 30%;
+ 
+        padding: 0 80px;
+        
+    }
+    #products {
+        justify-content: center;
+        .fe-box {
+            margin: 15px 15px;
+        }
+    }
+    
+    #newsletter{
+        .form {
+            width: 70%;
+        }
+
+    }
+}
+@include u.breakpoint(small-screen){
+    .section-p1{
+        padding: 20px;
+    }
+    #header {
+        padding: 10px 30px;
+    }
+    #hero {
+       
+        background-position: 55%;
+        padding: 0 20px;
+
+        h1 {
+            font-size: 30px;
+        }
+        .button {
+            min-width: 100px;
+            min-height: 60px;
+            font-size: 14px;
+        }
+    }
+    
+    #products{
+        justify-content: space-between;
+        .fe-box {
+            width: 155px;
+            margin: 0 0 15px 0;
+
+            h2{
+                font-size: 22px;
+            }
+    
+        }
+    }
+    #newsletter{
+        .form {
+        
+            width: 100%;
+        }
+        h2{
+            font-size: 25px;
+        }
+    }  
+}
+
